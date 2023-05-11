@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Cliente de carga de imágenes</title>
+</head>
+<body>
+    <h1>Carga de imágenes</h1>
+    <form action="/upload-image" method="POST" enctype="multipart/form-data">
+        <label for="image">Selecciona una imagen:</label>
+        <input type="file" name="image" id="image">
+        <button type="submit">Cargar imagen</button>
+    </form>
+
+    <h2>Historial de imágenes</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Imagen</th>
+                <th>Descripción</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for row in image_rows %}
+            <tr>
+                <td>{{ row[1] }}</td>
+                <td>{{ row[2] }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>
+
