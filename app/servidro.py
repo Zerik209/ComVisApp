@@ -9,17 +9,17 @@ app = Flask(__name__)
 # Configurar la conexión a la base de datos MySQL
 db = mysql.connector.connect(
     host='localhost',
-    user='tu_usuario',
-    password='tu_contraseña',
-    database='nombre_de_tu_basededatos'
+    user='root',
+    password='',
+    database='dbanaimg'
 )
 
 # Obtener un cursor para ejecutar consultas SQL
 cursor = db.cursor()
 
 # Configurar las credenciales de Azure
-subscription_key = "tu_clave_de_suscripción"
-endpoint = "tu_endpoint"
+subscription_key = "0431a3956cd34e0aa0a6d7241c42efda"
+endpoint = "https://imganasis.cognitiveservices.azure.com/"
 
 # Configurar el cliente de Computer Vision
 computervision_client = ComputerVisionClient(endpoint, CognitiveServicesCredentials(subscription_key))
